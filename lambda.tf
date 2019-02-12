@@ -10,6 +10,7 @@ resource "aws_lambda_function" "lambda" {
   description                    = "${var.description}"
   role                           = "${aws_iam_role.lambda.arn}"
   handler                        = "${var.handler}"
+  layers                         = ["${var.layers}"]
   memory_size                    = "${var.memory_size}"
   reserved_concurrent_executions = "${var.reserved_concurrent_executions}"
   runtime                        = "${var.runtime}"
@@ -53,6 +54,7 @@ resource "aws_lambda_function" "lambda_with_dl" {
   description                    = "${var.description}"
   role                           = "${aws_iam_role.lambda.arn}"
   handler                        = "${var.handler}"
+  layers                         = ["${var.layers}"]
   memory_size                    = "${var.memory_size}"
   reserved_concurrent_executions = "${var.reserved_concurrent_executions}"
   runtime                        = "${var.runtime}"
@@ -80,6 +82,7 @@ resource "aws_lambda_function" "lambda_with_vpc" {
   description                    = "${var.description}"
   role                           = "${aws_iam_role.lambda.arn}"
   handler                        = "${var.handler}"
+  layers                         = ["${var.layers}"]
   memory_size                    = "${var.memory_size}"
   reserved_concurrent_executions = "${var.reserved_concurrent_executions}"
   runtime                        = "${var.runtime}"
@@ -111,6 +114,7 @@ resource "aws_lambda_function" "lambda_with_dl_and_vpc" {
   description                    = "${var.description}"
   role                           = "${aws_iam_role.lambda.arn}"
   handler                        = "${var.handler}"
+  layers                         = ["${var.layers}"]
   memory_size                    = "${var.memory_size}"
   reserved_concurrent_executions = "${var.reserved_concurrent_executions}"
   runtime                        = "${var.runtime}"

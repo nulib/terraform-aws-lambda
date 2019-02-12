@@ -8,6 +8,12 @@ variable "handler" {
   type        = "string"
 }
 
+variable "layers" {
+  description = "List of Lambda Layer Version ARNs (maximum of 5) to attach to your Lambda Function."
+  type        = "list"
+  default     = []
+}
+
 variable "memory_size" {
   description = "Amount of memory in MB your Lambda function can use at runtime"
   type        = "string"
